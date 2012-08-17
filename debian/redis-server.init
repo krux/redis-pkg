@@ -28,6 +28,9 @@ then
 	. /etc/default/$NAME
 fi
 
+# requires ENABLED= to be set in /etc/default/$NAME
+test -n "$ENABLED" || exit 0
+
 set -e
 
 case "$1" in
